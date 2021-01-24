@@ -17,8 +17,10 @@ class Home extends React.Component {
       "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
     );
     this.setState({ movies, isLoading: false });
-  };
+  }; // getMovies라는 함수 정의
+
   componentDidMount() {
+    // render가 실행되기 전에 호출되는 함수
     this.getMovies();
   }
   render() {
@@ -40,6 +42,7 @@ class Home extends React.Component {
                 summary={movie.summary}
                 poster={movie.medium_cover_image}
                 genres={movie.genres}
+                // 이렇게 props데이터를 넘겨준다.
               />
             ))}
           </div>

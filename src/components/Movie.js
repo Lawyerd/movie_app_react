@@ -16,7 +16,7 @@ function Movie({ id, year, title, summary, poster, genres }) {
             poster,
             genres,
           },
-        }}
+        }} // 넘겨주는 데이터
       >
         <img src={poster} alt={title} title={title} />
         <div className="movie__data">
@@ -32,11 +32,13 @@ function Movie({ id, year, title, summary, poster, genres }) {
           <p className="movie__summary">{summary.slice(0, 180)}...</p>
         </div>
       </Link>
+      {/* 이까지가 다 링크 */}
     </div>
   );
 }
 
 Movie.propTypes = {
+  // 넘어와야할 props 데이터가 있는지 확인하는 방법
   id: PropTypes.number.isRequired,
   year: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
